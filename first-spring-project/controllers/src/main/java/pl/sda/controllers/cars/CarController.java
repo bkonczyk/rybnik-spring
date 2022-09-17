@@ -2,6 +2,7 @@ package pl.sda.controllers.cars;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,41 +13,45 @@ import java.util.List;
 @Slf4j
 class CarController {
 
-    private final CarFacade carFacade;
+    private final CarDelegate carDelegate;
 
     @GetMapping
     List<Car> getAllCars() {
         log.info("Received a request to get all cars");
-        return carFacade.getCars();
+        return carDelegate.getCars();
     }
 
     @GetMapping("/{make}")
     List<Car> getAllCarsByMake(@PathVariable String make) {
         log.info("Received request to get {} cars", make);
-        return carFacade.getCarsByMake(make);
+        return carDelegate.getCarsByMake(make);
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     void addCar(@RequestBody Car car) {
         log.info("Received request to add car {}", car);
-        carFacade.addCar(car);
+        carDelegate.addCar(car);
     }
 
     @PostMapping("/list")
+    @ResponseStatus(HttpStatus.CREATED)
     void addCars(@RequestBody List<Car> cars) {
         log.info("Received request to add list car {}", cars);
-        carFacade.addCars(cars);
+        carDelegate.addCars(cars);
     }
 
     @PutMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     void modifyFirstCar(@RequestBody Car car) {
         log.info("Received request to modify first car {}", car);
-        carFacade.modifyFirst(car);
+        carDelegate.modifyFirst(car);
     }
 
     @DeleteMapping("/{index}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteAtIndex(@PathVariable Integer index) {
         log.info("Received request to remove car at index {}", index);
-        carFacade.removeAtIndex(index);
+        carDelegate.removeAtIndex(index);
     }
 }

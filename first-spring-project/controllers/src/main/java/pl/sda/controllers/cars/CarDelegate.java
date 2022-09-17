@@ -7,7 +7,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class CarFacade {
+public class CarDelegate {
 
     private final CarService service;
 
