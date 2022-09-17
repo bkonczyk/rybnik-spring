@@ -16,7 +16,7 @@ class CarController {
     private final CarDelegate carDelegate;
 
     @GetMapping
-    List<Car> getAllCars() {
+    List<CarListView> getAllCars() {
         log.info("Received a request to get all cars");
         return carDelegate.getCars();
     }

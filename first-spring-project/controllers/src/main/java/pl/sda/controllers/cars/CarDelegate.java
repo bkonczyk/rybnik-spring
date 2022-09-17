@@ -11,8 +11,8 @@ public class CarDelegate {
 
     private final CarService service;
 
-    public List<Car> getCars() {
-        return service.getCars();
+    public List<CarListView> getCars() {
+        return service.getCarViews();
     }
 
     public List<Car> getCarsByMake(String make) {
