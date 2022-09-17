@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
@@ -15,11 +16,11 @@ public class CarInitializer {
     @PostConstruct
     private void initializeCarsList() {
         List<Car> cars = carService.getCars();
-        cars.add(Car.of("Hyundai", 2020));
-        cars.add(Car.of("Polonez", 1965));
-        cars.add(Car.of("Lanos", 2001));
-        cars.add(Car.of("Golf", 1988));
-        cars.add(Car.of("Passeratti", 2015));
-        cars.add(Car.of(null, 2015));
+        cars.add(Car.of(UUID.randomUUID(), "Hyundai", 2020));
+        cars.add(Car.of(UUID.randomUUID(), "Polonez", 1965));
+        cars.add(Car.of(UUID.randomUUID(), "Lanos", 2001));
+        cars.add(Car.of(UUID.randomUUID(), "Golf", 1988));
+        cars.add(Car.of(UUID.randomUUID(), "Passeratti", 2015));
+        cars.add(Car.of(UUID.randomUUID(), null, 2015));
     }
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static java.util.stream.Collectors.toList;
 
@@ -23,7 +24,11 @@ class CarService {
                 .collect(toList());
     }
 
-     void addCar(Car car) {
+     void addCar(CreateCarRequest request) {
+         Car car = Car.of(
+                 UUID.randomUUID(),
+                 request.getMake(),
+                 request.getYear());
         cars.add(car);
     }
 

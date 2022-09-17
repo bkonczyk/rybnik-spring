@@ -19,7 +19,7 @@ public class CarDelegate {
         return service.getCarsByMake(make);
     }
 
-    public void addCar(Car car) {
+    public void addCar(CreateCarRequest car) {
         service.addCar(car);
     }
 

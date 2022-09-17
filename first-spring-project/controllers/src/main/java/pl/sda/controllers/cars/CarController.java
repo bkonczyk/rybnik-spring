@@ -29,7 +29,7 @@ class CarController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    void addCar(@RequestBody Car car) {
+    void addCar(@RequestBody CreateCarRequest car) {
         log.info("Received request to add car {}", car);
         carDelegate.addCar(car);
     }
