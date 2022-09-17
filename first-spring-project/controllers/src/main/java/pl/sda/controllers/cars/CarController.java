@@ -10,43 +10,43 @@ import java.util.List;
 @RequestMapping("/api/cars")
 @RequiredArgsConstructor
 @Slf4j
-public class CarController {
+class CarController {
 
-    private final CarService carService;
+    private final CarFacade carFacade;
 
     @GetMapping
     List<Car> getAllCars() {
         log.info("Received a request to get all cars");
-        return carService.getCars();
+        return carFacade.getCars();
     }
 
     @GetMapping("/{make}")
     List<Car> getAllCarsByMake(@PathVariable String make) {
         log.info("Received request to get {} cars", make);
-        return carService.getCarsByMake(make);
+        return carFacade.getCarsByMake(make);
     }
 
     @PostMapping
     void addCar(@RequestBody Car car) {
         log.info("Received request to add car {}", car);
-        carService.addCar(car);
+        carFacade.addCar(car);
     }
 
     @PostMapping("/list")
     void addCars(@RequestBody List<Car> cars) {
         log.info("Received request to add list car {}", cars);
-        carService.addCars(cars);
+        carFacade.addCars(cars);
     }
 
     @PutMapping
     void modifyFirstCar(@RequestBody Car car) {
         log.info("Received request to modify first car {}", car);
-        carService.modifyFirst(car);
+        carFacade.modifyFirst(car);
     }
 
     @DeleteMapping("/{index}")
     void deleteAtIndex(@PathVariable Integer index) {
         log.info("Received request to remove car at index {}", index);
-        carService.removeAtIndex(index);
+        carFacade.removeAtIndex(index);
     }
 }

@@ -9,25 +9,25 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 @Service
-public class CarService {
+class CarService {
 
     private final List<Car> cars = new ArrayList<>();
 
-    public List<Car> getCars() {
+     List<Car> getCars() {
         return cars;
     }
 
-    public List<Car> getCarsByMake(String make) {
+     List<Car> getCarsByMake(String make) {
         return cars.stream()
                 .filter(car -> make.equalsIgnoreCase(car.getMake()))
                 .collect(toList());
     }
 
-    public void addCar(Car car) {
+     void addCar(Car car) {
         cars.add(car);
     }
 
-    public void addCars(List<Car> cars) {
+     void addCars(List<Car> cars) {
         this.cars.addAll(cars);
     }
 
@@ -41,11 +41,11 @@ public class CarService {
         cars.add(Car.of(null, 2015));
     }
 
-    public void modifyFirst(Car car) {
+     void modifyFirst(Car car) {
         cars.set(0, car);
     }
 
-    public void removeAtIndex(int index) {
+     void removeAtIndex(int index) {
         cars.remove(index);
     }
 }
