@@ -10,6 +10,7 @@
         <module name="empty-project" />
         <module name="controllers" />
         <module name="dependency-injection" />
+        <module name="zoo" />
         <module name="advanced-injection" />
         <module name="empty" />
       </profile>
@@ -21,6 +22,7 @@
       <module name="empty" target="15" />
       <module name="empty-project" target="15" />
       <module name="first-spring-project" target="15" />
+      <module name="zoo" target="15" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -31,6 +33,7 @@
       <module name="empty" options="-parameters" />
       <module name="empty-project" options="-parameters" />
       <module name="first-spring-project" options="-parameters" />
+      <module name="zoo" options="-parameters" />
     </option>
   </component>
 </project>

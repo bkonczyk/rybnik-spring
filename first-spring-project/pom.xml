@@ -23,6 +23,7 @@
 		<module>dependency-injection</module>
 		<module>advanced-injection</module>
         <module>controllers</module>
+        <module>zoo</module>
     </modules>
 
 	<dependencies>

@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/dependency-injection/dependency-injection.iml" filepath="$PROJECT_DIR$/first-spring-project/dependency-injection/dependency-injection.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/empty-project/empty-project.iml" filepath="$PROJECT_DIR$/first-spring-project/empty-project/empty-project.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/first-spring-project.iml" filepath="$PROJECT_DIR$/first-spring-project/first-spring-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first-spring-project/zoo/zoo.iml" filepath="$PROJECT_DIR$/first-spring-project/zoo/zoo.iml" />
     </modules>
   </component>
 </project>
