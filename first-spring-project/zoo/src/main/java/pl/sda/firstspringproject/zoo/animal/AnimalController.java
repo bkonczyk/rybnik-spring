@@ -26,11 +26,12 @@ public class AnimalController {
         log.info("xD");
         return service.getByName(name);
     }
-//
-//    @PostMapping
-//    void create(@RequestBody Animal animal) {
-//        animals.add(animal);
-//    }
+
+    @PostMapping
+    void create(@RequestBody Animal animal) {
+        log.info("Creating animal");
+        service.add(animal);
+    }
 //
 //    @PutMapping("/{index}")
 //    void update(@PathVariable int index, @RequestBody Animal animal) {

@@ -1,6 +1,7 @@
 package pl.sda.firstspringproject.zoo.animal;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,9 @@ public class AnimalService {
 
     private final AnimalRepository repository;
 
+    @Value("${zoo.max-age}")
+    private Integer maxAge;
+
     public List<Animal> getAll() {
         return repository.getAll();
     }
@@ -21,5 +25,12 @@ public class AnimalService {
                 .filter(animal -> name.equalsIgnoreCase(animal.getName()))
                 .findFirst()
                 .orElseThrow(() -> new NoSuchElementException("No such animal"));
+    }
+
+    public void add(Animal animal) {
+        if (animal.getAge() > maxAge) {
+            throw new IllegalArgumentException("It's dead already");
+        }
+        repository.add(animal);
     }
 }

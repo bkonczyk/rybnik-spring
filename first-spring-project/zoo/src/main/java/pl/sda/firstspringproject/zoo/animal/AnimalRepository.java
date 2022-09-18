@@ -13,4 +13,8 @@ public class AnimalRepository {
     public List<Animal> getAll() {
         return animals;
     }
+
+    public void add(Animal animal) {
+        animals.add(animal);
+    }
 }
