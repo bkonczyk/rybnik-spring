@@ -1,4 +1,3 @@
-zoo:
-  sample-animal:
-    name: losiek
-    kind: zebra
+spring:
+  profiles:
+    active: dev
