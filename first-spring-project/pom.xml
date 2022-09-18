@@ -24,7 +24,8 @@
 		<module>advanced-injection</module>
         <module>controllers</module>
         <module>zoo</module>
-    </modules>
+		<module>configuration-properties</module>
+	</modules>
 
 	<dependencies>
 		<dependency>

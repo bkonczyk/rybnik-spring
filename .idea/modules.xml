@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/advanced-injection/advanced-injection.iml" filepath="$PROJECT_DIR$/first-spring-project/advanced-injection/advanced-injection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first-spring-project/configuration-properties/configuration-properties.iml" filepath="$PROJECT_DIR$/first-spring-project/configuration-properties/configuration-properties.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/controllers/controllers.iml" filepath="$PROJECT_DIR$/first-spring-project/controllers/controllers.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/dependency-injection/dependency-injection.iml" filepath="$PROJECT_DIR$/first-spring-project/dependency-injection/dependency-injection.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/empty-project/empty-project.iml" filepath="$PROJECT_DIR$/first-spring-project/empty-project/empty-project.iml" />

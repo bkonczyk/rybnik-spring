@@ -1,0 +1,6 @@
+pl:
+  sda:
+    message: "This is my message"
+    person:
+      name: "Martin"
+      surname: "Riggs"

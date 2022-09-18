@@ -1,49 +1,44 @@
 package pl.sda.firstspringproject.zoo.animal;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import static java.util.UUID.randomUUID;
-
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/animals")
+@Slf4j
 public class AnimalController {
 
-    private final List<Animal> animals = new ArrayList<>();
-
-    public AnimalController() {
-        animals.add(new Animal(randomUUID(), "reksio", "dog", 10));
-        animals.add(new Animal(randomUUID(), "pucio", "lion", 1));
-    }
+    private final AnimalService service;
 
     @GetMapping
     List<Animal> getAll() {
-        return animals;
+        log.info("Rasdasd");
+        return service.getAll();
     }
 
     @GetMapping("/{name}")
     Animal getSingle(@PathVariable String name) {
-        return animals.stream()
-                .filter(animal -> name.equalsIgnoreCase(animal.getName()))
-                .findFirst()
-                .orElseThrow(() -> new NoSuchElementException("There is no such animal"));
+        log.info("xD");
+        return service.getByName(name);
     }
-
-    @PostMapping
-    void create(@RequestBody Animal animal) {
-        animals.add(animal);
-    }
-
-    @PutMapping("/{index}")
-    void update(@PathVariable int index, @RequestBody Animal animal) {
-        animals.set(index, animal);
-    }
-
-    @DeleteMapping("/{index}")
-    void delete(@PathVariable int index) {
-        animals.remove(index);
-    }
+//
+//    @PostMapping
+//    void create(@RequestBody Animal animal) {
+//        animals.add(animal);
+//    }
+//
+//    @PutMapping("/{index}")
+//    void update(@PathVariable int index, @RequestBody Animal animal) {
+//        animals.set(index, animal);
+//    }
+//
+//    @DeleteMapping("/{index}")
+//    void delete(@PathVariable int index) {
+//        animals.remove(index);
+//    }
 }

@@ -8,15 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="empty-project" />
-        <module name="controllers" />
         <module name="dependency-injection" />
-        <module name="zoo" />
         <module name="advanced-injection" />
+        <module name="controllers" />
+        <module name="zoo" />
+        <module name="configuration-properties" />
         <module name="empty" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="advanced-injection" target="15" />
+      <module name="configuration-properties" target="15" />
       <module name="controllers" target="15" />
       <module name="dependency-injection" target="15" />
       <module name="empty" target="15" />
@@ -28,6 +30,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="advanced-injection" options="-parameters" />
+      <module name="configuration-properties" options="-parameters" />
       <module name="controllers" options="-parameters" />
       <module name="dependency-injection" options="-parameters" />
       <module name="empty" options="-parameters" />
