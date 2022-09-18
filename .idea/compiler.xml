@@ -10,6 +10,7 @@
         <module name="empty-project" />
         <module name="dependency-injection" />
         <module name="advanced-injection" />
+        <module name="spring-data" />
         <module name="controllers" />
         <module name="zoo" />
         <module name="configuration-properties" />
@@ -24,6 +25,7 @@
       <module name="empty" target="15" />
       <module name="empty-project" target="15" />
       <module name="first-spring-project" target="15" />
+      <module name="spring-data" target="15" />
       <module name="zoo" target="15" />
     </bytecodeTargetLevel>
   </component>
@@ -36,6 +38,7 @@
       <module name="empty" options="-parameters" />
       <module name="empty-project" options="-parameters" />
       <module name="first-spring-project" options="-parameters" />
+      <module name="spring-data" options="-parameters" />
       <module name="zoo" options="-parameters" />
     </option>
   </component>
