@@ -7,16 +7,14 @@
         <groupId>pl.sda</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-data</artifactId>
-    <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>zoo-with-validation</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>
