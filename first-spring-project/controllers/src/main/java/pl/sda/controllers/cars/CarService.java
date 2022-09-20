@@ -3,8 +3,8 @@ package pl.sda.controllers.cars;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static java.util.stream.Collectors.toList;
 
@@ -12,39 +12,43 @@ import static java.util.stream.Collectors.toList;
 @RequiredArgsConstructor
 class CarService {
 
-    private final CarMapper carMapper;
-    private final List<Car> cars = new ArrayList<>();
+    private final CarMapper mapper;
+    private final CarRepository repository;
 
     List<Car> getCars() {
-        return cars;
+        return repository.findAll();
     }
 
     List<CarListView> getCarViews() {
-        return cars.stream()
-                .map(carMapper::toCarListView)
+        return getCars().stream()
+                .map(mapper::toCarListView)
                 .collect(toList());
     }
 
     List<Car> getCarsByMake(String make) {
-        return cars.stream()
-                .filter(car -> make.equalsIgnoreCase(car.getMake()))
-                .collect(toList());
+        return repository.findAllByMakeIgnoreCase(make);
     }
 
     void addCar(CreateCarRequest request) {
-        Car car = carMapper.toCar(request);
-        cars.add(car);
+        Car car = mapper.toCar(request);
+        repository.save(car);
     }
 
     void addCars(List<Car> cars) {
-        this.cars.addAll(cars);
+        repository.saveAll(cars);
     }
 
-    void modifyFirst(Car car) {
-        cars.set(0, car);
+    void modify(UUID id, Car car) {
+        repository.findById(id).ifPresent(foundCar -> {
+            Car updatedCar = new Car(id,
+                    car.getMake(),
+                    car.getYear(),
+                    car.getPrice());
+            repository.save(updatedCar);
+        });
     }
 
-    void removeAtIndex(int index) {
-        cars.remove(index);
+    void remove(UUID id) {
+        repository.deleteById(id);
     }
 }

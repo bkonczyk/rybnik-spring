@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
@@ -27,11 +28,11 @@ public class CarDelegate {
         service.addCars(cars);
     }
 
-    public void modifyFirst(Car car) {
-        service.modifyFirst(car);
+    public void modify(UUID id, Car car) {
+        service.modify(id, car);
     }
 
-    public void removeAtIndex(int index) {
-        service.removeAtIndex(index);
+    public void remove(UUID id) {
+        service.remove(id);
     }
 }

@@ -12,7 +12,7 @@ class CarMapper {
     }
 
     Car toCar(CreateCarRequest request) {
-        return Car.of(randomUUID(),
+        return new Car(null,
                 request.getMake(),
                 request.getYear(),
                 request.getPrice()

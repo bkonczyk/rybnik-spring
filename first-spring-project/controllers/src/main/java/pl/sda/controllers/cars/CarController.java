@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/cars")
@@ -41,17 +42,17 @@ class CarController {
         carDelegate.addCars(cars);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void modifyFirstCar(@RequestBody Car car) {
+    void modifyFirstCar(@PathVariable UUID id, @RequestBody Car car) {
         log.info("Received request to modify first car {}", car);
-        carDelegate.modifyFirst(car);
+        carDelegate.modify(id, car);
     }
 
-    @DeleteMapping("/{index}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteAtIndex(@PathVariable Integer index) {
-        log.info("Received request to remove car at index {}", index);
-        carDelegate.removeAtIndex(index);
+    void deleteAtIndex(@PathVariable UUID id) {
+        log.info("Received request to remove car id {}", id);
+        carDelegate.remove(id);
     }
 }
