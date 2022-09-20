@@ -26,6 +26,7 @@
         <module>zoo</module>
 		<module>configuration-properties</module>
 		<module>spring-data</module>
+		<module>spring-data-training</module>
 	</modules>
 
 	<dependencies>
