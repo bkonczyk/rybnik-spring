@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -28,7 +29,7 @@ public class AnimalController {
     }
 
     @PostMapping
-    void create(@RequestBody Animal animal) {
+    void create(@RequestBody @Valid Animal animal) {
         log.info("Creating animal");
         service.add(animal);
     }
