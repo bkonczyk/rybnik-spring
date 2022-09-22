@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.UUID;
 
@@ -24,7 +21,10 @@ class Car {
     @GeneratedValue
     @Type(type="uuid-char")
     private UUID id;
+    @Column(name = "make")
     private String make;
+    @Column(name = "yeaaa")
     private Integer year;
+    @Column(name = "asd")
     private BigDecimal price;
 }
