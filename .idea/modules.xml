@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/first-spring-project.iml" filepath="$PROJECT_DIR$/first-spring-project/first-spring-project.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/spring-data/spring-data.iml" filepath="$PROJECT_DIR$/first-spring-project/spring-data/spring-data.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-spring-project/zoo/zoo.iml" filepath="$PROJECT_DIR$/first-spring-project/zoo/zoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first-spring-project/zoo-with-validation/zoo-with-validation.iml" filepath="$PROJECT_DIR$/first-spring-project/zoo-with-validation/zoo-with-validation.iml" />
     </modules>
   </component>
 </project>
